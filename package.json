@@ -1,0 +1,21 @@
+{
+  "name": "wcag-accessibility-scanner",
+  "version": "1.0.0",
+  "description": "WCAG 2.1 AA accessibility scanner with PDF reporting",
+  "main": "scanner.js",
+  "scripts": {
+    "start": "node server.js",
+    "scan": "node scanner.js",
+    "build": "npm ci --only=production && npx playwright install chromium",
+    "postinstall": "npx playwright install chromium 2>/dev/null || true"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@axe-core/playwright": "^4.10.1",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pdfkit": "^0.15.1",
+    "playwright": "^1.49.1"
+  }
+}

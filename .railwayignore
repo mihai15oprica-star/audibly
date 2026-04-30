@@ -1,0 +1,14 @@
+node_modules/
+reports/
+*.pdf
+.git/
+.env
+.env.local
+.env.example
+.DS_Store
+*.log
+.vscode/
+.idea/
+coverage/
+dist/
+build/
