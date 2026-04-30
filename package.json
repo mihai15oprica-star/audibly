@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "scan": "node scanner.js",
-    "postinstall": "npx playwright install chromium --with-deps 2>/dev/null || true"
+    "build:favicon": "node build-favicon.js",
+    "postinstall": "npx playwright install chromium --with-deps 2>/dev/null || true && npm run build:favicon 2>/dev/null || true"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
@@ -15,6 +16,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "pdfkit": "^0.15.1",
-    "playwright": "^1.49.1"
+    "playwright": "^1.49.1",
+    "sharp": "^0.33.5"
   }
 }
