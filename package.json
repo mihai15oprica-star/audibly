@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "scan": "node scanner.js",
-    "build": "npm ci --only=production && npx playwright install chromium",
-    "postinstall": "npx playwright install chromium 2>/dev/null || true"
+    "postinstall": "npx playwright install chromium --with-deps 2>/dev/null || true"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
