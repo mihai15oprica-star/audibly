@@ -1154,7 +1154,7 @@
       badge.textContent = data.verdict;
       badge.className   = 'verdict-badge ' + verdictClass(data.verdict);
 
-      document.getElementById('download-btn').href = '/download/' + data.reportId;
+      document.getElementById('download-btn').href = '/checkout?token=' + data.token;
 
       var aiBanner = document.getElementById('ai-guide-banner');
       if (aiBanner) aiBanner.hidden = !data.aiGuideIncluded;
