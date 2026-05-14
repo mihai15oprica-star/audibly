@@ -971,11 +971,12 @@ app.get('/download/:id', (req, res) => {
 // ── START ─────────────────────────────────────────────────────────────────────
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+const HOST = process.env.HOST || '0.0.0.0';
+app.listen(PORT, HOST, () => {
   const aiEnabled = !!process.env.ANTHROPIC_API_KEY;
   const lsEnabled = !!process.env.LEMONSQUEEZY_CHECKOUT_URL;
   const adminEnabled = !!process.env.ADMIN_PASSWORD;
-  console.log(`\n  Auditly  →  http://localhost:${PORT}`);
+  console.log(`\n  Auditly  →  http://${HOST}:${PORT}`);
   console.log(`  AI Fix Guide  →  ${aiEnabled ? 'enabled (' + (process.env.AI_MODEL || 'claude-sonnet-4-5') + ')' : 'disabled (add ANTHROPIC_API_KEY)'}`);
   console.log(`  Payment       →  ${lsEnabled ? 'enabled (Lemon Squeezy)' : 'disabled (add LEMONSQUEEZY_CHECKOUT_URL)'}`);
   console.log(`  Admin panel   →  ${adminEnabled ? 'enabled at /admin' : 'disabled (add ADMIN_PASSWORD)'}\n`);
